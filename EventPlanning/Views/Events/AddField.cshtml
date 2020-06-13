@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>добавление полей</title>
+</head>
+<body>
+    @model EventPlanning.Models.Field
+
+        <div id="btnField">
+            <input type="button" id="addFieldBtn" value="Добавить поле" onclick="addField()" />
+            <input type="button" id="delFieldBtn" value="Удалить поле" onclick="delField()" />
+        </div>
+        <br />
+        <table>
+            <tr>
+                <th>Название поля</th>
+                <th>Значение</th>
+                <td hidden> <input class="EventId" value="@Model.EventId" /> </td>
+            </tr>
+            <tr class="DinamicField">
+                <td><input id="name" class="FieldName" name="FieldName" type="text" /></td>
+                <td><input class="FieldValue" name="FieldValue" type="text" /></td>   
+            </tr>
+        </table>
+        <br />
+        <input type="button" value="Save" onclick="saveField()" />  
+</body>
+</html>

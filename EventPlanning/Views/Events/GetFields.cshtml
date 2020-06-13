@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EventPlanning.Models.Field>
+
+<!DOCTYPE html>
+<html>
+<body>
+        <h3>Fields</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.FieldName)</td>
+                    <td> @Html.DisplayFor(modelItem => item.FieldValue)</td>
+                    <td>
+                        |
+                        @Html.ActionLink("удалить поле", "DelField", new { id = item.Id })
+                        |
+                    </td>
+                </tr>
+            }
+        </table>        
+</body>
+</html>
